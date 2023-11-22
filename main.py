@@ -1,3 +1,4 @@
+import graf
 list = []
 def beolvasas(lista):
     file = open("tablazat.csv", "r")
@@ -106,6 +107,12 @@ def main():
             tovabb = False
         elif a == "lekerdezesek":
             lekerdezesek()
+            tovabb = False
+        elif a == "linegraf":
+            graf
+            tovabb = False
+        elif a == "plotdiagram":
+            graf
             tovabb = False
         elif a == "joslas":
             joslas()
