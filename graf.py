@@ -20,27 +20,31 @@ with open('tablazat.csv', newline='\n') as csvfile:
         epitoipari_termeles_volumenindexe.append(row[3])
 # making a line graph and plot diagram from the above:
 # line graph:
-plt.plot(ev, epitoipari_termeles_erteke)
-plt.title('Az építőipari termelés értéke(millió forint), évenkenti változása:')
-plt.xlabel('év')
-plt.ylabel('termelés értéke')
-plt.show()
+def line():
+    plt.plot(ev, epitoipari_termeles_erteke)
+    plt.title('Az építőipari termelés értéke(millió forint), évenkenti változása:')
+    plt.xlabel('év')
+    plt.ylabel('termelés értéke')
+    plt.show()
 # plot diagram:
-plt.plot(ev, epitoipari_termeles_volumenindexe, 'ro')
-plt.title('Az építőipari termelés volumenindexének(előző év = 100,0%) évenkénti változása')
-plt.xlabel('év')
-plt.ylabel('építőipari termelés volumenindexe')
-plt.show()
+def plot():
+    plt.plot(ev, epitoipari_termeles_volumenindexe, 'ro')
+    plt.title('Az építőipari termelés volumenindexének(előző év = 100,0%) évenkénti változása')
+    plt.xlabel('év')
+    plt.ylabel('építőipari termelés volumenindexe')
+    plt.show()
+
+def vlm():
 # making a linear regression graph from 2 lists(above):
 # calculating the slope and intercept of the linear regression line:
-slope, intercept = np.polyfit(ev, epitoipari_termeles_erteke, 1)
+    slope, intercept = np.polyfit(ev, epitoipari_termeles_erteke, 1)
 # creating the scatter plot:
-plt.scatter(ev, epitoipari_termeles_erteke)
+    plt.scatter(ev, epitoipari_termeles_erteke)
 # adding the linear regression line to the scatter plot:
-plt.plot(ev, slope * np.array(ev) + intercept, color='red')
+    plt.plot(ev, slope * np.array(ev) + intercept, color='red')
 # adding titles:
-plt.title('Lineáris regresszió évek és az építőipari termelés értéke viszonylatába:')
-plt.xlabel('év')
-plt.ylabel('építőipari termelés értéke')
+    plt.title('Lineáris regresszió évek és az építőipari termelés értéke viszonylatába:')
+    plt.xlabel('év')
+    plt.ylabel('építőipari termelés értéke')
 # showing the plot:
-plt.show()
+    plt.show()
