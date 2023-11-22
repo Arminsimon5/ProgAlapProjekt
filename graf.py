@@ -20,21 +20,21 @@ with open('tablazat.csv', newline='\n') as csvfile:
         epitoipari_termeles_volumenindexe.append(row[3])
 # making a line graph and plot diagram from the above:
 # line graph:
-def line():
+def lineGraph():
     plt.plot(ev, epitoipari_termeles_erteke)
     plt.title('Az építőipari termelés értéke(millió forint), évenkenti változása:')
     plt.xlabel('év')
     plt.ylabel('termelés értéke')
     plt.show()
 # plot diagram:
-def plot():
+def plotDiagram():
     plt.plot(ev, epitoipari_termeles_volumenindexe, 'ro')
     plt.title('Az építőipari termelés volumenindexének(előző év = 100,0%) évenkénti változása')
     plt.xlabel('év')
     plt.ylabel('építőipari termelés volumenindexe')
     plt.show()
 
-def vlm():
+def LinearRegression():
 # making a linear regression graph from 2 lists(above):
 # calculating the slope and intercept of the linear regression line:
     slope, intercept = np.polyfit(ev, epitoipari_termeles_erteke, 1)
